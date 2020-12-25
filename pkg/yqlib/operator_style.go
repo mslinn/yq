@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"fmt"
 
-	"gopkg.in/yaml.v3"
+	yaml "gopkg.in/yaml.v3"
 )
 
 func AssignStyleOperator(d *dataTreeNavigator, matchingNodes *list.List, pathNode *PathTreeNode) (*list.List, error) {
@@ -20,6 +20,8 @@ func AssignStyleOperator(d *dataTreeNavigator, matchingNodes *list.List, pathNod
 	if rhs.Front() != nil {
 		customStyle = rhs.Front().Value.(*CandidateNode).Node.Value
 	}
+
+	// FAIL HERE
 
 	var style yaml.Style
 	if customStyle == "tagged" {

@@ -3,7 +3,7 @@ package yqlib
 import (
 	"container/list"
 
-	"gopkg.in/yaml.v3"
+	yaml "gopkg.in/yaml.v3"
 )
 
 func AssignAliasOperator(d *dataTreeNavigator, matchingNodes *list.List, pathNode *PathTreeNode) (*list.List, error) {
@@ -18,6 +18,7 @@ func AssignAliasOperator(d *dataTreeNavigator, matchingNodes *list.List, pathNod
 	if rhs.Front() != nil {
 		aliasName = rhs.Front().Value.(*CandidateNode).Node.Value
 	}
+	// FAIL HERE
 
 	lhs, err := d.GetMatchingNodes(matchingNodes, pathNode.Lhs)
 
@@ -59,6 +60,8 @@ func AssignAnchorOperator(d *dataTreeNavigator, matchingNodes *list.List, pathNo
 	if rhs.Front() != nil {
 		anchorName = rhs.Front().Value.(*CandidateNode).Node.Value
 	}
+
+	// FAIL HERE
 
 	lhs, err := d.GetMatchingNodes(matchingNodes, pathNode.Lhs)
 

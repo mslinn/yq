@@ -10,7 +10,39 @@ yq eval '.a lineComment="single"' sample.yml
 ```
 will output
 ```yaml
-a: cat # single
+a: cat
+```
+
+## Use update assign to perform relative updates
+Given a sample.yml file of:
+```yaml
+a: cat
+b: dog
+```
+then
+```bash
+yq eval '.. lineComment |= .' sample.yml
+```
+will output
+```yaml
+a: cat # cat
+b: dog # dog
+```
+
+## Use update assign to perform relative updates
+Given a sample.yml file of:
+```yaml
+a: cat
+b: dog
+```
+then
+```bash
+yq eval '.. comments |= .' sample.yml
+```
+will output
+```yaml
+a: cat
+b: dog
 ```
 
 ## Set head comment
@@ -24,8 +56,6 @@ yq eval '. headComment="single"' sample.yml
 ```
 will output
 ```yaml
-# single
-
 a: cat
 ```
 
@@ -41,8 +71,6 @@ yq eval '. footComment=.a' sample.yml
 will output
 ```yaml
 a: cat
-
-# cat
 ```
 
 ## Remove comment
@@ -57,7 +85,7 @@ yq eval '.a lineComment=""' sample.yml
 ```
 will output
 ```yaml
-a: cat
+a: cat # comment
 b: dog # leave this
 ```
 

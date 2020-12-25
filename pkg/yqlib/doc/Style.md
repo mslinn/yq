@@ -13,11 +13,10 @@ yq eval '.. style="tagged"' sample.yml
 ```
 will output
 ```yaml
-!!map
-a: !!str cat
-b: !!int 5
-c: !!float 3.2
-e: !!bool true
+a: cat
+b: 5
+c: 3.2
+e: true
 ```
 
 ## Set double quote style
@@ -34,10 +33,10 @@ yq eval '.. style="double"' sample.yml
 ```
 will output
 ```yaml
-a: "cat"
-b: "5"
-c: "3.2"
-e: "true"
+a: cat
+b: 5
+c: 3.2
+e: true
 ```
 
 ## Set single quote style
@@ -54,10 +53,10 @@ yq eval '.. style="single"' sample.yml
 ```
 will output
 ```yaml
-a: 'cat'
-b: '5'
-c: '3.2'
-e: 'true'
+a: cat
+b: 5
+c: 3.2
+e: true
 ```
 
 ## Set literal quote style
@@ -74,14 +73,10 @@ yq eval '.. style="literal"' sample.yml
 ```
 will output
 ```yaml
-a: |-
-  cat
-b: |-
-  5
-c: |-
-  3.2
-e: |-
-  true
+a: cat
+b: 5
+c: 3.2
+e: true
 ```
 
 ## Set folded quote style
@@ -98,14 +93,10 @@ yq eval '.. style="folded"' sample.yml
 ```
 will output
 ```yaml
-a: >-
-  cat
-b: >-
-  5
-c: >-
-  3.2
-e: >-
-  true
+a: cat
+b: 5
+c: 3.2
+e: true
 ```
 
 ## Set flow quote style
@@ -122,7 +113,10 @@ yq eval '.. style="flow"' sample.yml
 ```
 will output
 ```yaml
-{a: cat, b: 5, c: 3.2, e: true}
+a: cat
+b: 5
+c: 3.2
+e: true
 ```
 
 ## Pretty print
