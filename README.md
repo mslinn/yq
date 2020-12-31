@@ -20,19 +20,30 @@ If you've been using v3 and want/need to upgrade, checkout the [upgrade guide](h
 Use wget to download the pre-compiled binaries:
 
 #### Compressed via tar.gz
+
+Modify `VERSION` and `BINARY` to suit.
+
 ```bash
+sudo su
+VERSION=v4.2.0
+BINARY=yq_linux_amd64
 wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - |\
   tar xz && mv ${BINARY} /usr/bin/yq
+exit
 ```
 
 #### Plain binary
 
-```bash
-wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq &&\
-    chmod +x /usr/bin/yq
-```
+Modify `VERSION` and `BINARY` to suit.
 
-For instance, VERSION=v4.2.0 and BINARY=yq_linux_amd64
+```bash
+sudo su
+VERSION=v4.2.0
+BINARY=yq_linux_amd64
+wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq && \
+  chmod +x /usr/bin/yq
+exit
+```
 
 ### MacOS / Linux via Homebrew:
 Using [Homebrew](https://brew.sh/)
